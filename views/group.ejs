@@ -1,6 +1,19 @@
 <h1>Let's create a group</h1>
 
 <form action="/group" method="post">
-    <input type="text" name="name">
+    <label for="groupname">Group Name:</label>
+        <input type="text" name="groupname" id="groupname">
+        <label for="username">User Name:</label>
+        <input type="text" name="username" id="username">
+    <input type="submit">
+</form>
+
+<h1>Join a group</h1>
+
+<form action="/group/join" method="post">
+    <label for="groupid">Group Id:</label>
+        <input type="text" name="groupid" id="groupid">
+        <label for="username">User Name:</label>
+        <input type="text" name="username" id="username">
     <input type="submit">
 </form>
