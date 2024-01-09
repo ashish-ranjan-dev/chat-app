@@ -63,7 +63,9 @@ app.get('/group', async (req, res) => {
 });
 
 app.post('/group/join',async (req,res)=>{
-    res.redirect("/chat/"+req.body.groupid+"/"+req.body.username)
+    console.log(req.body);
+    const group = await Group.findOne({ name: req.body.groupname });
+    res.redirect("/chat/"+group._id+"/"+req.body.username)
 })
 
 app.post('/group', async (req, res) => {

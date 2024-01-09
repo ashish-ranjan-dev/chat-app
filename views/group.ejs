@@ -11,9 +11,27 @@
 <h1>Join a group</h1>
 
 <form action="/group/join" method="post">
-    <label for="groupid">Group Id:</label>
-        <input type="text" name="groupid" id="groupid">
+    <label for="groupname">Group Name:</label>
+        <input type="text" name="groupname" id="groupname">
         <label for="username">User Name:</label>
         <input type="text" name="username" id="username">
     <input type="submit">
 </form>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        function handleEnterKey(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                event.target.form.submit();
+            }
+        }
+
+        const createGroupForm = document.getElementById("createGroupForm");
+        const joinGroupForm = document.getElementById("joinGroupForm");
+
+        createGroupForm.addEventListener("keypress", handleEnterKey);
+        joinGroupForm.addEventListener("keypress", handleEnterKey);
+    });
+</script>
